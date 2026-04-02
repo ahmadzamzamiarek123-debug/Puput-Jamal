@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #fdfcf0;
+  --color-cream-100: #faf8e8;
+  --color-cream-200: #f5f2d8;
+
+  --color-sage-50: #f0f4f0;
+  --color-sage-100: #e3ebe3;
+  --color-sage-200: #d6e4d3;
+  --color-sage-300: #b8d4b4;
+  --color-sage-400: #8bbd85;
+  --color-sage-500: #5fa356;
+  --color-sage-600: #4a8242;
+  --color-sage-700: #3b6634;
+  --color-sage-800: #2f4f4f;
+  --color-sage-900: #1f3a3a;
+
+  --color-dino-yellow: #f4d03f;
+  --color-dino-yellow-light: #f7dc6f;
+  --color-dino-yellow-dark: #d4ac0d;
+
+  --font-nunito: "Nunito", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-script: "Great Vibes", cursive;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-cream-50);
+  color: var(--color-sage-800);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-sage-400);
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(47, 79, 79, 0.1);
+}
+
+/* Floral pattern overlay */
+.floral-bg {
+  position: relative;
+}
+
+.floral-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(214, 228, 211, 0.4) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(214, 228, 211, 0.4) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(244, 208, 63, 0.1) 0%,
+      transparent 70%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Section styling */
+.section-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Leaf decorations CSS pattern */
+.leaf-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 Q35 15 30 25 Q25 15 30 5' fill='%23D6E4D3' opacity='0.3'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-dino-yellow);
+  color: var(--color-sage-800);
+}
