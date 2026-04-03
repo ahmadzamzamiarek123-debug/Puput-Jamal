@@ -107,8 +107,17 @@ function EventCard({ icon, title, date, time }: EventCardProps) {
 }
 
 export default function Event() {
+  const [copied, setCopied] = useState(false);
+
   const handleOpenMaps = () => {
     window.open("https://maps.app.goo.gl/Zy9y43cbouAZjmdT7", "_blank");
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("901570066360").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
   };
 
   return (
@@ -211,6 +220,28 @@ export default function Event() {
               <p className="text-sage-500 text-xs">
                 a.n Putri Rahayu Retno Safitri
               </p>
+            </div>
+
+            <div className="mt-4">
+              <motion.button
+                onClick={handleCopy}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className={`
+                  inline-flex items-center gap-2
+                  px-6 py-3 rounded-full
+                  font-nunito font-semibold text-sm
+                  shadow-md hover:shadow-lg
+                  transition-all duration-300
+                  ${copied
+                    ? "bg-sage-700 text-cream-50"
+                    : "bg-dino-yellow text-sage-800"
+                  }
+                `}
+              >
+                <span>{copied ? "✅" : "📋"}</span>
+                <span>{copied ? "Tersalin!" : "Salin No. Rekening"}</span>
+              </motion.button>
             </div>
           </div>
         </AnimatedItem>

@@ -90,7 +90,7 @@ export default function Couple() {
               title="Pengantin Pria"
               name="Jamal"
               fullName="Khoirul Jamal"
-              parents="Putra dari Bpk. Abdul Jamil & Ibu Kasmi"
+              parents="Putra dari Bpk. Abdul Jamil (Alm) & Ibu Kasmi"
               imageSrc="/WhatsApp_Image_2026-01-21_at_02.21.22-removebg-preview.png"
             />
           </SlideIn>

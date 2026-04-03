@@ -106,7 +106,7 @@ export default function CoupleProfile() {
           <PersonCard
             title="Pengantin Pria"
             name="Khoirul Jamal"
-            parents="Putra dari Bpk. Abdul Jamil & Ibu Kasmi"
+            parents="Putra dari Bpk. Abdul Jamil (Alm) & Ibu Kasmi"
             imageSrc="/WhatsApp_Image_2026-01-21_at_02.21.22-removebg-preview.png"
             delay={0.4}
           />
