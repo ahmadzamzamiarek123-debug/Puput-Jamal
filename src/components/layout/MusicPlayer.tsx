@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface MusicPlayerProps {
@@ -30,15 +30,19 @@ export default function MusicPlayer({
     };
   }, []);
 
-  // Auto-play when invite is opened
+  // Track whether auto-play has already fired (prevents re-triggering on pause)
+  const hasAutoPlayed = useRef(false);
+
+  // Auto-play when invite is opened (only once)
   useEffect(() => {
-    if (autoPlayOnOpen && isInviteOpen && audioRef.current && !isPlaying) {
+    if (autoPlayOnOpen && isInviteOpen && audioRef.current && !hasAutoPlayed.current) {
+      hasAutoPlayed.current = true;
       audioRef.current
         .play()
         .then(() => setIsPlaying(true))
         .catch(console.error);
     }
-  }, [isInviteOpen, autoPlayOnOpen, isPlaying]);
+  }, [isInviteOpen, autoPlayOnOpen]);
 
   const togglePlay = () => {
     if (!audioRef.current) return;

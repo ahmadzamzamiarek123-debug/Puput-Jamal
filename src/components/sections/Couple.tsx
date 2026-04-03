@@ -67,7 +67,7 @@ export default function Couple() {
         </AnimatedItem>
 
         {/* Couple Cards */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start max-w-2xl mx-auto">
+        <div className="relative grid md:grid-cols-2 gap-8 md:gap-12 items-start max-w-2xl mx-auto">
           <SlideIn direction="left">
             <PersonCard
               title="Pengantin Wanita"
@@ -78,8 +78,8 @@ export default function Couple() {
             />
           </SlideIn>
 
-          {/* Ampersand Divider - Center */}
-          <AnimatedItem className="flex items-center justify-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-first md:order-none">
+          {/* Ampersand Divider - Between cards on mobile, centered overlay on desktop */}
+          <AnimatedItem className="flex items-center justify-center order-none md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:z-10">
             <div className="w-16 h-16 rounded-full bg-dino-yellow flex items-center justify-center shadow-lg">
               <span className="font-script text-3xl text-sage-800">&</span>
             </div>
@@ -89,8 +89,8 @@ export default function Couple() {
             <PersonCard
               title="Pengantin Pria"
               name="Jamal"
-              fullName="Jamal Khoiruddin"
-              parents="Putra dari Bpk. Ahmad & Ibu Siti Aminah"
+              fullName="Khoirul Jamal"
+              parents="Putra dari Bpk. Abdul Jamil & Ibu Kasmi"
               imageSrc="/WhatsApp_Image_2026-01-21_at_02.21.22-removebg-preview.png"
             />
           </SlideIn>

@@ -62,14 +62,14 @@ export default function EventDetails() {
             icon="💍"
             title="Akad Nikah"
             date="Senin, 06 April 2026"
-            time="07.00 WIB"
+            time="08.00 WIB"
             delay={0.2}
           />
           <EventCard
             icon="🎉"
             title="Resepsi"
             date="Senin, 06 April 2026"
-            time="09.00 WIB - Selesai"
+            time="13.00 WIB - Selesai"
             delay={0.4}
           />
         </div>

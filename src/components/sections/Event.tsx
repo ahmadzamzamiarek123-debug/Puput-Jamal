@@ -22,7 +22,7 @@ function CountdownTimer() {
 
   useEffect(() => {
     setMounted(true);
-    const weddingDate = new Date("2026-04-06T07:00:00+07:00").getTime();
+    const weddingDate = new Date("2026-04-06T08:00:00+07:00").getTime();
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
@@ -145,7 +145,7 @@ export default function Event() {
               icon="💍"
               title="Akad Nikah"
               date="Senin, 06 April 2026"
-              time="07.00 WIB"
+              time="08.00 WIB"
             />
           </ScaleIn>
           <ScaleIn delay={0.2}>
@@ -153,7 +153,7 @@ export default function Event() {
               icon="🎉"
               title="Resepsi"
               date="Senin, 06 April 2026"
-              time="09.00 WIB - Selesai"
+              time="13.00 WIB - Selesai"
             />
           </ScaleIn>
         </div>
